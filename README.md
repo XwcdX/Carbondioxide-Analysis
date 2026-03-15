@@ -1,7 +1,7 @@
 # Daily CO₂ Emission Prediction
 
 **Project for RASIO 2025 Competition Data Science Category by Padjadjaran University**
-**[View the Project Presentation Here]([https://drive.google.com/file/d/1u-3Boneuk0-eehA5zWctDK4YOaEsjhIO/view?usp=sharing])**
+**[View the Project Presentation Here](https://drive.google.com/file/d/1u-3Boneuk0-eehA5zWctDK4YOaEsjhIO/view?usp=sharing)**
 
 ## Overview
 As the industrial sector continues to grow rapidly, it becomes increasingly important to accurately predict daily CO₂ emission levels. Reliable forecasts are essential for developing effective environmental policies and public health strategies. This project was developed as part of a data science competition, leveraging advanced data science methodologies to build a robust predictive model for daily CO₂ emissions.
