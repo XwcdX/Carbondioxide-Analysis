@@ -254,26 +254,26 @@ NFOLDS = 5
 kfold = KFold(n_splits=NFOLDS, shuffle=True, random_state=42)
 
 # Single model evaluation -> CV
-print("\n" + "="*60)
-print("INDIVIDUAL MODEL PERFORMANCE")
-print("="*60)
+# print("\n" + "="*60)
+# print("INDIVIDUAL MODEL PERFORMANCE")
+# print("="*60)
 
-models_for_cv = get_models_for_cv()
-model_scores = {}
+# models_for_cv = get_models_for_cv()
+# model_scores = {}
 
-for name, model in models_for_cv.items():
-    print(f"\nEvaluating {name}...")
-    cv_scores = cross_val_score(model, X_train, train_y, cv=kfold, 
-                               scoring='neg_root_mean_squared_error', n_jobs=-1)
-    cv_rmse = -cv_scores.mean()
-    cv_std = cv_scores.std()
+# for name, model in models_for_cv.items():
+#     print(f"\nEvaluating {name}...")
+#     cv_scores = cross_val_score(model, X_train, train_y, cv=kfold, 
+#                                scoring='neg_root_mean_squared_error', n_jobs=-1)
+#     cv_rmse = -cv_scores.mean()
+#     cv_std = cv_scores.std()
     
-    model_scores[name] = {'cv_rmse': cv_rmse, 'cv_std': cv_std}
-    print(f"  CV RMSE: {cv_rmse:.4f} (±{cv_std:.4f})")
-print(f"\n{'Model':<20} {'CV RMSE':<10} {'Std':<10}")
-print("-" * 40)
-for name, scores in sorted(model_scores.items(), key=lambda x: x[1]['cv_rmse']):
-    print(f"{name:<20} {scores['cv_rmse']:<10.4f} {scores['cv_std']:<10.4f}")
+#     model_scores[name] = {'cv_rmse': cv_rmse, 'cv_std': cv_std}
+#     print(f"  CV RMSE: {cv_rmse:.4f} (±{cv_std:.4f})")
+# print(f"\n{'Model':<20} {'CV RMSE':<10} {'Std':<10}")
+# print("-" * 40)
+# for name, scores in sorted(model_scores.items(), key=lambda x: x[1]['cv_rmse']):
+#     print(f"{name:<20} {scores['cv_rmse']:<10.4f} {scores['cv_std']:<10.4f}")
 
 # -----------------------------------------------------------------
 # 6. Model Building: Out-of-Fold (OOF) Stacking
